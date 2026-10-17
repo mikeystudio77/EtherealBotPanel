@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethereal Assistant - Commands</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Ethereal Assistant</div>
+        <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    </div>
+
+    <div class="menu-dropdown" id="menuDropdown">
+        <a href="index.html" class="menu-item">Home</a>
+        <a href="tac.html" class="menu-item">Terms & Conditions</a>
+        <a href="commands.html" class="menu-item">Bot Commands</a>
+    </div>
+
+    <div class="container">
+        <h1>Bot Commands</h1>
+        <div class="subtitle">Every command works as /command and as !command.</div>
+
+        <div class="category-title">Moderation</div>
+        <div class="cmd-grid">
+            <span class="cmd-pill">kick</span>
+            <span class="cmd-pill">ban</span>
+            <span class="cmd-pill">unban</span>
+            <span class="cmd-pill">timeout</span>
+            <span class="cmd-pill">untimeout</span>
+            <span class="cmd-pill">warn</span>
+            <span class="cmd-pill">warnings</span>
+            <span class="cmd-pill">delwarn</span>
+            <span class="cmd-pill">clearwarns</span>
+            <span class="cmd-pill">history</span>
+            <span class="cmd-pill">purge</span>
+            <span class="cmd-pill">slowmode</span>
+            <span class="cmd-pill">lock</span>
+            <span class="cmd-pill">unlock</span>
+            <span class="cmd-pill">addrole</span>
+            <span class="cmd-pill">removerole</span>
+            <span class="cmd-pill">nick</span>
+        </div>
+
+        <div class="category-title">Setup (Manage Server)</div>
+        <div class="cmd-grid">
+            <span class="cmd-pill">setlog</span>
+            <span class="cmd-pill">setwelcome</span>
+            <span class="cmd-pill">setautorole</span>
+            <span class="cmd-pill">automod</span>
+            <span class="cmd-pill">config</span>
+        </div>
+
+        <div class="category-title">Info</div>
+        <div class="cmd-grid">
+            <span class="cmd-pill">userinfo</span>
+            <span class="cmd-pill">serverinfo</span>
+            <span class="cmd-pill">avatar</span>
+            <span class="cmd-pill">ping</span>
+        </div>
+
+        <div class="category-title">Info Panels (Slash Only)</div>
+        <div class="cmd-grid">
+            <span class="cmd-pill">/panel create</span>
+            <span class="cmd-pill">/panel addbutton</span>
+            <span class="cmd-pill">/panel post</span>
+            <span class="cmd-pill">/panel edit</span>
+            <span class="cmd-pill">/panel list</span>
+            <span class="cmd-pill">/panel preview</span>
+            <span class="cmd-pill">/panel removebutton</span>
+            <span class="cmd-pill">/panel delete</span>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() { document.getElementById('menuDropdown').classList.toggle('active'); }
+        window.onclick = function(e) { if (!e.target.closest('.hamburger') && !e.target.closest('.menu-dropdown')) { document.getElementById('menuDropdown').classList.remove('active'); } }
+    </script>
+</body>
+</html>

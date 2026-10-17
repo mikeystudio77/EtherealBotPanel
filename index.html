@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethereal Assistant - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Ethereal Assistant</div>
+        <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    </div>
+
+    <div class="menu-dropdown" id="menuDropdown">
+        <a href="index.html" class="menu-item">Home</a>
+        <a href="tac.html" class="menu-item">Terms & Conditions</a>
+        <a href="commands.html" class="menu-item">Bot Commands</a>
+    </div>
+
+    <div class="container">
+        <div class="home-grid">
+            
+            <!-- Discord Profile Card with Banner & Avatar -->
+            <div class="discord-profile-card">
+                <!-- Top Cosmic Banner Image -->
+                <img src="banner.gif" alt="Profile Banner" class="profile-banner">
+                
+                <div class="profile-body">
+                    <div class="profile-header">
+                        <img src="avatar.gif" alt="Bot Avatar" class="profile-avatar">
+                        <div class="profile-names">
+                            <div class="profile-name">Ethereal assistant <span class="app-badge">APP</span></div>
+                            <div class="profile-tag">Ethereal assistant#9415</div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-bio">
+                        🛡️ Public Protection & Utility Bot<br>
+                        ⚔️ Moderation: Warn, Kick, & Ban layout.<br>
+                        ✨ Features: High-quality Embeds & logs.<br>
+                        🚀 Safe, fast, and easy to configure.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side Content & Buttons -->
+            <div class="hero-content">
+                <h1>Ethereal Assistant</h1>
+                <p class="subtitle">The ultimate custom bot designed to supercharge your community with advanced moderation, custom embeds, and interactive tools.</p>
+                
+                <div class="btn-group">
+                    <a href="https://discord.com/oauth2/authorize?client_id=1559983683685847143&permissions=8&integration_type=0&scope=bot+applications.commands" class="btn" target="_blank">Add Bot to Server</a>
+                    <a href="commands.html" class="btn btn-secondary">View Commands</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() { document.getElementById('menuDropdown').classList.toggle('active'); }
+        window.onclick = function(e) { if (!e.target.closest('.hamburger') && !e.target.closest('.menu-dropdown')) { document.getElementById('menuDropdown').classList.remove('active'); } }
+    </script>
+</body>
+</html>

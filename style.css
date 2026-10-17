@@ -1,0 +1,186 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body {
+    background-image: url('bg.gif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* Navbar & Hamburger */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: rgba(10, 10, 15, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    z-index: 1000;
+}
+.logo { font-size: 1.2rem; font-weight: 700; background: linear-gradient(45deg, #ffffff, #a5b4fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+.hamburger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.hamburger:hover { background: rgba(255, 255, 255, 0.15); }
+.hamburger span { display: block; width: 22px; height: 2px; background: #ffffff; border-radius: 2px; }
+
+/* Dropdown Menu */
+.menu-dropdown {
+    position: fixed;
+    top: 75px;
+    right: 30px;
+    background: rgba(15, 15, 20, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    width: 210px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+    display: none;
+    flex-direction: column;
+    z-index: 999;
+    overflow: hidden;
+}
+.menu-dropdown.active { display: flex; }
+.menu-item {
+    padding: 14px 20px;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: 0.2s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.menu-item:last-child { border-bottom: none; }
+.menu-item:hover { background: rgba(255, 255, 255, 0.1); color: #ffffff; }
+
+/* Main Container Card */
+.container {
+    background: rgba(15, 15, 20, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    max-width: 850px;
+    width: 100%;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+    margin-top: 60px;
+}
+
+.home-grid {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .home-grid { flex-direction: column; text-align: center; }
+}
+
+/* Discord Profile Card with Top Banner */
+.discord-profile-card {
+    background: rgba(20, 20, 28, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 320px;
+    text-align: left;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+.profile-banner {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.profile-body {
+    padding: 0 18px 18px 18px;
+    margin-top: -30px; /* Avatar ko banner ke upar overlap karne ke liye */
+}
+
+.profile-header { display: flex; align-items: flex-end; gap: 12px; margin-bottom: 12px; }
+.profile-avatar { 
+    width: 65px; 
+    height: 65px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 4px solid #14141c; 
+    background: #14141c;
+}
+
+.profile-names { padding-top: 25px; }
+.profile-name { font-size: 1.05rem; font-weight: 700; color: #ffffff; display: flex; align-items: center; gap: 6px; }
+.app-badge { background: #5865F2; color: #fff; font-size: 0.55rem; padding: 2px 5px; border-radius: 4px; font-weight: 600; }
+.profile-tag { font-size: 0.78rem; color: #94a3b8; font-family: monospace; }
+
+.profile-bio {
+    font-size: 0.82rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 12px;
+    border-radius: 10px;
+    border-left: 3px solid #5865F2;
+    margin-top: 5px;
+}
+
+.hero-content { flex: 1; }
+h1 { font-size: 2.2rem; margin-bottom: 10px; color: #ffffff; }
+.subtitle { color: #94a3b8; margin-bottom: 20px; font-size: 0.95rem; line-height: 1.5; }
+
+.btn-group { display: flex; gap: 12px; flex-wrap: wrap; }
+@media (max-width: 768px) { .btn-group { justify-content: center; } }
+
+.btn {
+    background: #ffffff;
+    color: #0f172a;
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    transition: 0.3s;
+    display: inline-block;
+}
+.btn:hover { background: #e2e8f0; transform: translateY(-2px); }
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: none;
+}
+.btn-secondary:hover { background: rgba(255, 255, 255, 0.15); }
+
+/* Common styles for TAC and Commands */
+h2 { font-size: 1.2rem; margin-top: 20px; margin-bottom: 8px; color: #e2e8f0; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 4px; }
+p, li { color: #94a3b8; font-size: 0.95rem; line-height: 1.5; margin-bottom: 8px; }
+ul { padding-left: 20px; }
+.category-title { font-size: 1.1rem; color: #a5b4fc; margin-top: 15px; margin-bottom: 8px; font-weight: 600; }
+.cmd-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
+.cmd-pill { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; color: #e2e8f0; font-family: monospace; }

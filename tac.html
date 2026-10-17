@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethereal Assistant - TAC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Ethereal Assistant</div>
+        <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    </div>
+
+    <div class="menu-dropdown" id="menuDropdown">
+        <a href="index.html" class="menu-item">Home</a>
+        <a href="tac.html" class="menu-item">Terms & Conditions</a>
+        <a href="commands.html" class="menu-item">Bot Commands</a>
+    </div>
+
+    <div class="container">
+        <h1>Terms & Conditions</h1>
+        <div class="subtitle">Effective as of October 2026</div>
+
+        <h2>1. Usage Guidelines</h2>
+        <p>By inviting Ethereal Assistant to your Discord server, you agree to comply with these terms. The bot provides moderation, automated features, and custom embeds.</p>
+
+        <h2>2. Data Collection</h2>
+        <p>We store only necessary data required for bot operations (Server IDs, User IDs, and configuration preferences). Data is never sold or shared with third parties.</p>
+
+        <h2>3. Liability</h2>
+        <p>Developers are not liable for any misconfigured administrative commands or permission exploits within your servers.</p>
+    </div>
+
+    <script>
+        function toggleMenu() { document.getElementById('menuDropdown').classList.toggle('active'); }
+        window.onclick = function(e) { if (!e.target.closest('.hamburger') && !e.target.closest('.menu-dropdown')) { document.getElementById('menuDropdown').classList.remove('active'); } }
+    </script>
+</body>
+</html>
